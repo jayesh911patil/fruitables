@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\FreshorganicvegetablesController;
 use App\Http\Controllers\Admin\BestsellerproductsController;
 use App\Http\Controllers\Admin\CountersController;
 use App\Http\Controllers\Admin\OurclientsayingController;
+use App\Http\Controllers\Admin\DummyController;
 
 
 
@@ -172,4 +173,16 @@ Route::controller(OurclientsayingController::class)->group(function () {
     Route::get('admin/edit-our-client-saying/{ourclientsaying_id}', 'Editourclientsaying')->name('edit-our-client-saying');
     Route::post('admin/edit-store-our-client-saying/{ourclientsaying_id}', 'Editstoreourclientsaying')->name('edit-store-our-client-saying');
     route::get('admin/delete-our-client-saying/{ourclientsaying_id}', 'Deleteourclientsaying')->name('delete-our-client-saying');
+});
+
+
+Route::controller(DummyController::class)->group(function () {
+    Route::get('admin/dummy', 'Dummy')->name('dummy');
+    Route::get('admin/add-dummy', 'Adddummy')->name('add-dummy');
+    Route::post('admin/add-store-dummy', 'Addstoredummy')->name('add-store-dummy');
+    Route::get('admin/edit-dummy/{dummyid}', 'Editdummy')->name('edit-dummy');
+    Route::post('admin/edit-store-dummy{dummyid}', 'Editstoredummy')->name('edit-store-dummy');
+    Route::get('admin/delete-store-dummy{dummyid}', 'Deletedummy')->name('delete-store-dummy');
+
+    
 });
